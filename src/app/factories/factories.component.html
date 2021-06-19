@@ -1,0 +1,37 @@
+<h1>Factories</h1>
+
+<button routerLink="/home">Go back home</button>
+
+<div>
+
+<form [formGroup]="factoriesForm">
+
+<input type="text" placeholder="Main factory" [(ngModel)]="mainFactory" id="mainFactory">
+<div *ngIf="getControl.mainFactory.invalid && (getControl.mainFactory.dirty) || getControl.mainFactory.touched"></div>
+<div *ngIf="getControl.mainFactory.errors?.required">Required</div>
+
+<input type="text" placeholder="Alternate factory" [(ngModel)]="alternateFactory" id="alternateFactory">
+<div *ngIf="getControl.alternateFactory.invalid && (getControl.alternateFactory.dirty) || getControl.alternateFactory.touched"></div>
+<div *ngIf="getControl.alternateFactory.errors?.required">Required</div>
+
+<input type="text" placeholder="Corporate address" [(ngModel)]="corporateAddress" id="corporateAddress">
+<div *ngIf="getControl.corporateAddress.invalid && (getControl.corporateAddress.dirty) || getControl.corporateAddress.touched"></div>
+<div *ngIf="getControl.corporateAddress.errors?.required">Required</div>
+
+<input type="text" placeholder="Corporate email" [(ngModel)]="corporateEmail" id="corporateEmail">
+<div *ngIf="getControl.corporateEmail.invalid && (getControl.corporateEmail.dirty) || getControl.corporateEmail.touched"></div>
+<div *ngIf="getControl.corporateEmail.errors?.required">Required</div>
+
+<input type="text" placeholder="Corporate telephone" [(ngModel)]="corporateTelephone" id="corporateTelephone">
+<div *ngIf="getControl.corporateTelephone.invalid && (getControl.corporateTelephone.dirty) || getControl.corporateTelephone.touched"></div>
+<div *ngIf="getControl.corporateTelephone.errors?.required">Required</div>
+
+<input type="text" placeholder="RFC" [(ngModel)]="rfc" id="rfc">
+<div *ngIf="getControl.rfc.invalid && (getControl.rfc.dirty) || getControl.rfc.touched"></div>
+<div *ngIf="getControl.rfc.errors?.required">Required</div>
+
+<button (click)="SaveFactory(mainFactory, alternateFactory, corporateAddress, corporateEmail, corporateTelephone, rfc)">Save</button>
+
+</form>
+
+</div>

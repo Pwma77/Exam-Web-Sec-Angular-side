@@ -1,0 +1,25 @@
+<h1>Manufacturers</h1>
+
+<button routerLink="/home">Go back home</button>
+
+<div>
+
+<form [formGroup]="manufacturerForm">
+
+<input type="text" placeholder="Manufacturer" [(ngModel)]="manufacturer" id="manufacturer">
+<div *ngIf="getControl.manufacturer.invalid && (getControl.manufacturer.dirty) || getControl.manufacturer.touched"></div>
+<div *ngIf="getControl.manufacturer.errors?.required">Required</div>
+
+<input type="text" placeholder="Email" [(ngModel)]="email" id="email">
+<div *ngIf="getControl.email.invalid && (getControl.email.dirty) || getControl.email.touched"></div>
+<div *ngIf="getControl.email.errors?.required">Required</div>
+
+<input type="password" placeholder="Password" [(ngModel)]="password" id="password">
+<div *ngIf="getControl.password.invalid && (getControl.password.dirty) || getControl.password.touched"></div>
+<div *ngIf="getControl.password.errors?.required">Required</div>
+
+<button (click)="SaveManufacturer(manufacturer, email, password)">Save</button>
+
+</form>
+
+</div>
